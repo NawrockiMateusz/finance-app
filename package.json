@@ -1,0 +1,20 @@
+{
+  "name": "finance-app",
+  "version": "1.0.0",
+  "description": "A modern finance management application built with Node.js, Express, Angular, and PostgreSQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NawrockiMateusz/finance-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NawrockiMateusz/finance-app/issues"
+  },
+  "homepage": "https://github.com/NawrockiMateusz/finance-app#readme"
+}
