@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: finance_backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://user:password@db:5432/finance_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  db:
+    image: postgres:15-alpine
+    container_name: finance_db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: finance_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    container_name: finance_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
